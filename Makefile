@@ -13,6 +13,7 @@ all: $(TARGET).pdf
 
 %.pdf : %.tex
 	pdflatex $*
+	@pdflatex $*
 	@rm -f $(JUNK)
 
 clean:
