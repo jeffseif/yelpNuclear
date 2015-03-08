@@ -9,7 +9,7 @@
   \setbeamercovered{transparent}
 }
 
-\title{Nuclear Engineering}
+\title{Nuclear Engineering is a thing}
 \author{Jeffrey Seifried}
 \institute{Ad Delivery Team, Yelp}
 \date{Advanced Learning Group, \texttt{2015-03-16}}
@@ -76,7 +76,7 @@
             \begin{column}{0.5\textwidth}
                 \begin{figure}
                     \centering
-                    \includegraphics{./img/sources.pdf} \\
+                    \includegraphics{./img/sources.pdf}
                     \caption*{US elecriticity sources (2014)}
                 \end{figure}
             \end{column}
@@ -85,7 +85,7 @@
                 \begin{itemize}
                     \item Fossil Fuels generate 66\%
                     \pause
-                    \item Nuclear power generates 20\%
+                    \item Nuclear generates 20\%
                     \pause
                     \item ...and 60\% of carbon-free electricity
                     \pause
@@ -105,7 +105,7 @@
 
         \begin{itemize}
 
-            \item Coal causes 10 thousand deaths annually in the US
+            \item Coal particulates cause 10 thousand deaths annually in the US
             \pause
             \item One quarter of California air pollution is from China
             \pause
@@ -127,12 +127,13 @@
 \subsection{We've come a long way since 1978}
 
     \begin{frame}{Light water reactor (LWR) fuel assembly and core}
+
         \begin{columns}[T]
 
             \begin{column}{0.5\textwidth}
                 \begin{figure}
                     \centering
-                    \includegraphics[width=12em]{./img/bwrFuel.png} \\
+                    \includegraphics[width=12em]{./img/bwrFuel.png}
                     \caption*{}
                 \end{figure}
             \end{column}
@@ -140,7 +141,7 @@
             \begin{column}{0.5\textwidth}
                 \begin{figure}
                     \centering
-                    \includegraphics[width=8em]{./img/bwrCore.png} \\
+                    \includegraphics[width=8em]{./img/bwrCore.png}
                     \caption*{}
                 \end{figure}
             \end{column}
@@ -152,7 +153,7 @@
     \begin{frame}{Boiling Water Reactor (BWR) balance of plant}
         \begin{figure}
             \centering
-            \includegraphics[width=24em]{./img/bwrBop.png} \\
+            \includegraphics[width=24em]{./img/bwrBop.png}
             \caption*{}
         \end{figure}
     \end{frame}
@@ -160,12 +161,17 @@
     \begin{frame}{Pressurized Water Reactor (PWR) balance of plant}
         \begin{figure}
             \centering
-            \includegraphics[width=24em]{./img/pwrBop.png} \\
+            \includegraphics[width=24em]{./img/pwrBop.png}
             \caption*{}
         \end{figure}
     \end{frame}
 
     \begin{frame}{Fast reactors}
+        \begin{figure}
+            \centering
+            \includegraphics[width=24em]{./img/fastCycle.png}
+            \caption*{}
+        \end{figure}
     \end{frame}
 
     \begin{frame}{Breed and burn reactors}
@@ -200,7 +206,47 @@
         \end{equation*}
     \end{frame}
 
-    \begin{frame}{Nuclear reaction cross-sections are complicated}
+    \begin{frame}{Spatial distributions can be complicated}
+        \begin{figure}
+            \centering
+            \includegraphics[width=18em]{./img/spaceFlux1.png}
+            \caption*{}
+        \end{figure}
+    \end{frame}
+
+    \begin{frame}{Spatial distributions can be complicated}
+        \begin{figure}
+            \centering
+            \includegraphics[width=18em]{./img/spaceFlux2.png}
+            \caption*{}
+        \end{figure}
+    \end{frame}
+
+    \begin{frame}{Spatial distributions can be complicated}
+        \begin{figure}
+            \centering
+            \includegraphics[width=18em]{./img/spaceFlux3.png}
+            \caption*{}
+        \end{figure}
+    \end{frame}
+
+    \begin{frame}{Energy distributions can be complicated}
+        \begin{figure}
+            \centering
+            \includegraphics[width=24em]{./img/energyXs.png}
+            \caption*{}
+        \end{figure}
+    \end{frame}
+
+    \begin{frame}{Energy distributions can be complicated}
+        \begin{figure}
+            \centering
+            \includegraphics[width=24em]{./img/energyFlux.png}
+            \caption*{}
+        \end{figure}
+    \end{frame}
+
+    \begin{frame}{Simplification, Discretization, Monte Carlo}
     \end{frame}
 
 \subsection{Solving the Bateman equations}
@@ -215,6 +261,9 @@
                 + \sum_k \left[ b_{k \rightarrow i} \int_0^\infty \! \! \! \! dE \; \; \sigma_{absorption,k} ( \vec r, E, \vec\Omega) \; \; \psi(\vec r, E, \vec \Omega) \; \; N_k(\vec r, t) \right] \\
             \end{split}
         \end{equation*}
+    \end{frame}
+
+    \begin{frame}{Analytical, Matrix Exponential, CRAM}
     \end{frame}
 
 \section*{Summary}
