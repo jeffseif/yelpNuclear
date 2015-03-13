@@ -219,20 +219,20 @@
 
     \subsection{Solving the neutron transport equation}
 
-        \begin{frame}{Neutrons can be described as existing in a 7-dimensional neutron phase space}
+        \begin{frame}{Accurate simulation of neutron fields requires their description 7-dimensional neutron phase space}
             \begin{figure}
                 \centering
                 \includegraphics[width=0.9\textwidth]{./img/phaseSpace.png}
             \end{figure}
         \end{frame}
 
-        \begin{frame}{The neutron transport equation balances sources and sinks within this neutron phase space}
+        \begin{frame}{The neutron transport equation balances sources and sinks within this neutron phase space}{(time dependence is omitted for simplicity)}
             \begin{equation*}
                 \begin{split}
                     \vec \Omega \cdot \vec \bigtriangledown \; \; \psi(\vec r, E, \vec \Omega) \\
-                    + \Sigma_{total}(\vec r, E) \; \; \psi(\vec r, E, \vec\Omega) \\
-                    = \int_0^\infty \! \! \! \! dE \int_{4\pi} \! \! \! \! d\vec\Omega \; \; \Sigma_{scatter}(\vec r, E^\prime \rightarrow E, \vec \Omega^\prime \cdot \vec \Omega) \; \; \psi(\vec r, E^\prime, \vec\Omega^\prime) \\
-                    + \frac{\chi(E)}{4\pi} \int_0^\infty \! \! \! \! dE^{\prime\prime} \; \; \nu (E^{\prime\prime}) \; \; \Sigma_{fission}(\vec r, E^{\prime\prime}) \; \; \psi(\vec r, E^{\prime\prime}, \vec\Omega^{\prime\prime}) \\
+                    + \sigma_{total}(\vec r, E) \; \; N(\vec r) \; \; \psi(\vec r, E, \vec\Omega) \\
+                    = \int_0^\infty \! \! \! \! dE \int_{4\pi} \! \! \! \! d\vec\Omega \; \; \sigma_{scatter}(\vec r, E^\prime \rightarrow E, \vec \Omega^\prime \cdot \vec \Omega) \; \; N(\vec r) \; \; \psi(\vec r, E^\prime, \vec\Omega^\prime) \\
+                    + \frac{\chi(E)}{4\pi} \int_0^\infty \! \! \! \! dE^{\prime\prime} \; \; \nu (E^{\prime\prime}) \; \; \sigma_{fission}(\vec r, E^{\prime\prime}) \; \; N(\vec r) \; \; \psi(\vec r, E^{\prime\prime}, \vec\Omega^{\prime\prime}) \\
                     + \mathcal{S}_{ext}(\vec r, E, \vec\Omega)
                 \end{split}
             \end{equation*}
@@ -281,18 +281,29 @@
         \begin{frame}{Simplification, Discretization, Monte Carlo}
         \end{frame}
 
+        \begin{frame}{Coupled simulations}
+        \end{frame}
+
     \subsection{Solving the Bateman equations}
 
-        \begin{frame}{The Bateman equations describe the time-evolution of isotopes during decay and irradiation}
+        \begin{frame}{The Bateman equations describe the time-evolution of isotopes during decay and irradiation}{... it must be solved simultaneously with the NTE}
             \begin{equation*}
                 \begin{split}
                     \frac{\partial N_i(\vec r, t)}{\partial t} \\
                     + \lambda_i \; \; N_i(\vec r, t) \\
-                    + \int_0^\infty \! \! \! \! dE \; \; \sigma_{absorption,i} ( \vec r, E, \vec\Omega) \; \; \psi(\vec r, E, \vec \Omega) \; \; N_i(\vec r, t) \\
+                    + \int_0^\infty \! \! \! \! dE \; \; \sigma_{absorption,i} ( \vec r, E) \; \; \int_{4\pi} \! \! \! \! d\vec\Omega \; \; \psi(\vec r, E, \vec \Omega) \; \; N_i(\vec r, t) \\
                     = \sum_j \left[ b_{j \rightarrow i} \; \; \lambda_j \; \; N_j(\vec r, t) \right] \\
-                    + \sum_k \left[ b_{k \rightarrow i} \int_0^\infty \! \! \! \! dE \; \; \sigma_{absorption,k} ( \vec r, E, \vec\Omega) \; \; \psi(\vec r, E, \vec \Omega) \; \; N_k(\vec r, t) \right] \\
+                    + \sum_k \left[ b_{k \rightarrow i} \int_0^\infty \! \! \! \! dE \; \; \sigma_{absorption,k} ( \vec r, E) \; \; \int_{4\pi} \! \! \! \! d\vec\Omega \; \; \psi(\vec r, E, \vec \Omega) \; \; N_k(\vec r, t) \right] \\
                 \end{split}
             \end{equation*}
+        \end{frame}
+
+        \begin{frame}{Isotope depletion, breeding, and decay $(t)$ can be complicated}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.7\textwidth]{./img/fuelCycle.png}
+                \caption*{}
+            \end{figure}
         \end{frame}
 
         \begin{frame}{Analytical, Matrix Exponential, CRAM}
