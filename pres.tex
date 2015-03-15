@@ -133,7 +133,7 @@
                     \begin{enumerate}
                         \item A neutron tickles a fissile nucleus
                         \pause
-                        \item ... which fissions into gargabe, energy, and 2-3 neutrons
+                        \item ... which fissions into garbage, energy, and 2-3 neutrons
                         \pause
                         \item ... on average, 1-2 neutrons leak from the system or are consumed in a non-fission reaction
                         \pause
@@ -289,9 +289,15 @@
             \end{figure}
         \end{frame}
 
-        FIXME
+        \begin{frame}{Fusion energy is star power on earth! \\ It produces no carbon or nuclear waste!}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.7\textwidth]{./img/theSun.jpg}
+                \caption*{}
+            \end{figure}
+        \end{frame}
 
-        \begin{frame}{Hybrid fusion-fission reactors}{... still need some work}
+        \begin{frame}{There is enough fusion fuel in the ocean to power humanity until the earth spins into the sun.}
             \begin{figure}
                 \centering
                 \includegraphics[width=0.9\textwidth]{./img/lifeFuel.png}
@@ -299,7 +305,7 @@
             \end{figure}
         \end{frame}
 
-        \begin{frame}{Hybrid fusion-fission reactors}{.. are envisioned as a stepping-stone between fission and fusion energy}
+        \begin{frame}{However, controlled fusion is really difficult ... the NIF experiment at Livermore came close to break-even}
             \begin{figure}
                 \centering
                 \includegraphics[width=1.0\textwidth]{./img/nifChamber.png}
@@ -307,7 +313,7 @@
             \end{figure}
         \end{frame}
 
-        \begin{frame}{Hybrid fusion-fission reactors}{.. are awesome}
+        \begin{frame}{Hybrid fusion-fission reactors will be an economic stepping stone until fusion energy is perfected}
             \begin{figure}
                 \centering
                 \includegraphics[width=0.9\textwidth]{./img/lifeChamber.png}
@@ -366,7 +372,7 @@
             \end{figure}
         \end{frame}
 
-        \begin{frame}{The neutron transport equation balances sources and sinks within this neutron phase space}{(time dependence is omitted for simplicity)}
+        \begin{frame}{The neutron transport equation (NTE) balances sources and sinks within neutron phase space}
             \begin{equation*}
                 \begin{split}
                     \vec \Omega \cdot \vec \bigtriangledown \; \; \psi(\vec r, E, \vec \Omega) \\
@@ -378,15 +384,80 @@
             \end{equation*}
         \end{frame}
 
-        \begin{frame}{Simplification, Discretization, Monte Carlo}
+        \begin{frame}{The easiest approach is simplification}
+            \begin{itemize}
+                \item Ignore energy dependence
+                \pause
+                \item Assume direction dependence is isotropic or linearly anisotropic
+                \pause
+                \item Approximate the system as a smeared homogeneous lump
+                \pause
+                \item Assume the spatial/spectral/directional dependencies are separable
+                      (e.g., $\psi(\vec r, E, \vec\Omega) = \mathcal{R}(\vec r)\mathcal{E}(r)\mathcal{W}(\vec\Omega)$)
+                      and solve them independently
+                \pause
+
+                \vspace{2em}
+
+                \item You can get creative!
+                \pause
+                \item Also, garbage in, garbage out!
+            \end{itemize}
         \end{frame}
 
-        \begin{frame}{Coupled simulations}
+        \begin{frame}{The next approach is discretization}
+            \begin{enumerate}
+                \item Divide spatial regions into cubes or tetrahedra, with interfaces
+                \pause
+                \item Divide the energy axis into hundreds or thousands of bins
+                \pause
+                \item Expand directional dependence in spherical harmonics
+                \pause
+                \item Consider at pseudo-steady-state snapshots in time
+                \pause
+                \item Write an enormous linear system and iterate until convergence
+                \pause
+                \item Sweep through the solution in a manner which mimics the physical path of neutrons
+            \end{enumerate}
+        \end{frame}
+
+        \begin{frame}{The accurate approach is Monte Carlo neutron transport}
+            \begin{enumerate}
+                \item Assume a source distribution
+                \pause
+                \item Sample a neutron from it ($\vec r$, $E$, $\vec\Omega$)
+                \pause
+                \item Sample how far the neutron travels before a leak or collision
+                \pause
+                \item Sample the collision type (e.g., scatter, fission, capture)
+                \pause
+                \item Sample the collision outcome ($\vec r$, $E$, $\vec\Omega$)
+                \pause
+                \item Iterate until the source distribution converges
+                \pause
+                \item Consider accelerating with the simpler models above
+            \end{enumerate}
+        \end{frame}
+
+        \begin{frame}{Often other solutions need to be coupled and solved simultaneously}
+            \begin{itemize}
+                \item Neutron behavior is strongly dependant upon the density and temperature of water
+                \pause
+                \item Fluids flow (Navier-Stokes)
+                \pause
+                \item Heat spreads (heat equation) and expands things (equation of state of the material)
+                \pause
+                \item Boiling water behaves differently from liquid water (closure relations)
+                \pause
+                \item Solve each one independently (holding the rest constant) and iterate!
+                \pause
+                \item Choose a smart path and consider relaxation for acceleration or stability
+            \end{itemize}
         \end{frame}
 
     \subsection{The Bateman equations}
 
-        \begin{frame}{Isotope depletion, breeding, and decay $(t)$ can be complicated}
+        \begin{frame}{Isotope depletion, breeding, and decay can be complicated}
             \begin{figure}
                 \centering
                 \includegraphics[width=0.7\textwidth]{./img/fuelCycle.png}
@@ -394,7 +465,7 @@
             \end{figure}
         \end{frame}
 
-        \begin{frame}{The Bateman equations describe the time-evolution of isotopes during decay and irradiation}{... it must be solved simultaneously with the NTE}
+        \begin{frame}{The Bateman equations describe the time-evolution of isotopes during decay and irradiation}
             \begin{equation*}
                 \begin{split}
                     \frac{\partial N_i(\vec r, t)}{\partial t} \\
@@ -406,12 +477,56 @@
             \end{equation*}
         \end{frame}
 
-        \begin{frame}{Analytical, Matrix Exponential, CRAM}
+        \begin{frame}{If you take the Laplacian \\ an analytical solution exists!}
+
+            \begin{equation*}
+                N_n(t) = \Pi_{j=1}^{n-1} \lambda_j \sum_{i=1}^n \sum_{j=1}^n \left(\frac{N_i(0) e^{-\lambda_j t}}{\Pi_{p=i,p\ne j}(\lambda_p - \lambda_j}\right)
+            \end{equation*}
+
+            \begin{itemize}
+                \pause
+                \item The formulation is numerically unstable in real cases
+                \pause
+                \item So, on practice, it is solved numerically
+            \end{itemize}
+        \end{frame}
+
+        \begin{frame}{The ODE is homogeneous \\ so it can be written as a linear system}
+
+            \begin{equation*}
+                \frac{\partial\vec N}{\partial t} = \mathbb{T} \vec N
+            \end{equation*}
+
+            \pause
+            \begin{equation*}
+                \vec N(t) = \vec N_0 e^{\mathbb{T} t}
+            \end{equation*}
+
+            \pause
+            \begin{equation*}
+                \vec N(t) \approx \mathbb{I} + \mathbb{T}t + \frac{\left(\mathbb{T}t\right)^2}{2!} + \dots
+            \end{equation*}
+
+            \begin{itemize}
+                \pause
+                \item $\mathbb{T}$ is large and ill-conditioned in real cases
+                \pause
+                \item So, in practice many of the less relevant terms are zeroed and collapsed
+            \end{itemize}
         \end{frame}
 
 \section*{Summary}
 
-    \begin{frame}{Summary}
+    \begin{frame}{Nuclear energy is}
+        \begin{itemize}
+            \item ... important
+            \pause
+            \item ... old
+            \pause
+            \item ... new
+            \pause
+            \item ... complicated
+        \end{itemize}
     \end{frame}
 
 \end{document}
