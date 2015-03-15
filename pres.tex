@@ -9,7 +9,7 @@
   \setbeamercovered{transparent}
 }
 
-\title{Nuclear Engineering is a thing}
+\title{Nuclear Energy is \\ important, old, new, and complicated}
 \author{Jeffrey Seifried}
 \institute{Ad Delivery Team, Yelp}
 \date{Advanced Learning Group, \texttt{2015-03-16}}
@@ -35,11 +35,11 @@
 
 \section{About Me}
 
-    \begin{frame}{I've studied Nuclear Engineering for over a decade}{... and all I got was this stupid tshirt}
+    \begin{frame}{I am a devout supporter of nuclear energy}
 
         \begin{itemize}
 
-            \item BS at University of Maryland, College Park
+            \item BSNE at University of Maryland, College Park
             \begin{itemize}
                 \item Became a nuclear reactor operator
                 \item Spent 4 summers + 1 semester \\ at the U.S. Nuclear Regulatory Commission
@@ -47,7 +47,7 @@
 
             \pause
 
-            \item PhD at UC, Berkeley and Lawrence Livermore Lab
+            \item PhDNE at UC, Berkeley and Lawrence Livermore Lab
             \begin{itemize}
                 \item Developed reactor simulations
                 \item Propagated uncertainties through them
@@ -56,7 +56,7 @@
 
             \pause
 
-            \item postdoc
+            \item 2 year postdoc
             \begin{itemize}
                 \item Developed reactor simulations
                 \item Taught a course on nuclear reactor physics
@@ -66,43 +66,11 @@
 
     \end{frame}
 
-\section{Nuclear Energy}
+\section{Nuclear energy}
 
-    \subsection{The state of the neutron}
+    \subsection{... is important}
 
-        \begin{frame}{Nuclear energy is important right now}
-
-            \begin{columns}[T]
-
-                \begin{column}{0.5\textwidth}
-                    \begin{figure}
-                        \centering
-                        \includegraphics{./img/sources.pdf}
-                        \caption*{US elecriticity sources (2014)}
-                    \end{figure}
-                \end{column}
-
-                \begin{column}{0.5\textwidth}
-                    \begin{itemize}
-                        \item Fossil Fuels generate 66\%
-                        \pause
-                        \item Nuclear generates 20\%
-                        \pause
-                        \item .. .and 60\% of carbon-free electricity
-                        \pause
-                        \item The most recent plant was built in 1996
-                        \pause
-                        \item ... its construction began in 1978
-                        \pause
-                        \item Renewables are ``other''
-                    \end{itemize}
-                \end{column}
-
-            \end{columns}
-
-        \end{frame}
-
-        \begin{frame}{... and soon will be even more important!}
+        \begin{frame}{``Dear future generations: Please accept our apologies, we were roaring drunk on petroleum.''}{- Kurt Vonnegut}
 
             \begin{itemize}
 
@@ -125,25 +93,155 @@
 
         \end{frame}
 
-        \begin{frame}{Nuclear reactors power 1800's era steam engines}{... as do coal, oil, and some natural gas}
+        \begin{frame}{We need a scalable, baseload, carbon-free energy source.  Right now!}
+
+            \begin{columns}[T]
+
+                \begin{column}{0.5\textwidth}
+                    \begin{figure}
+                        \centering
+                        \includegraphics[width=\textwidth]{./img/sources.pdf}
+                        \caption*{US elecriticity sources (2014)}
+                    \end{figure}
+                \end{column}
+
+                \begin{column}{0.5\textwidth}
+                    \begin{itemize}
+                        \item Fossil Fuels generate 66\%
+                        \pause
+                        \item Nuclear generates 20\%
+                        \pause
+                        \item ... and 60\% of carbon-free electricity
+                        \pause
+                        \item Most of ``other'' is hydro \\ (which is shrinking)
+                        \pause
+                        \item Renewables are not ready
+                    \end{itemize}
+                \end{column}
+
+            \end{columns}
+
+        \end{frame}
+
+    \subsection{... is old}
+
+        \begin{frame}{The fission chain reaction \\ is at the heart of nuclear energy}
+
+            \begin{columns}[T]
+
+                \begin{column}{0.5\textwidth}
+                    \begin{enumerate}
+                        \item A neutron tickles a fissile nucleus
+                        \pause
+                        \item ... which fissions into gargabe, energy, and 2-3 neutrons
+                        \pause
+                        \item ... on average, 1-2 neutrons leak from the system or are consumed in a non-fission reaction
+                        \pause
+                        \item ... and 1 survives to cause another fission
+                    \end{enumerate}
+                \end{column}
+
+                \begin{column}{0.5\textwidth}
+                    \begin{figure}
+                        \centering
+                        \includegraphics[width=0.7\textwidth]{./img/chainReaction.pdf}
+                        \caption*{The fission chain reaction}
+                    \end{figure}
+                \end{column}
+
+            \end{columns}
+
+        \end{frame}
+
+        \begin{frame}{The US nuclear fleet is composed of \\ roughly 100 light water reactors (LWR)}
+
+            \begin{columns}[T]
+
+                \begin{column}{0.5\textwidth}
+                    \begin{figure}
+                        \centering
+                        \includegraphics[width=0.8\textwidth]{./img/bwrFuel.png}
+                        \caption*{A fuel assembly}
+                    \end{figure}
+                \end{column}
+
+                \begin{column}{0.5\textwidth}
+                    \begin{figure}
+                        \centering
+                        \includegraphics[width=0.5\textwidth]{./img/bwrCore.png}
+                        \caption*{A nuclear reactor core}
+                    \end{figure}
+                \end{column}
+
+            \end{columns}
+
+        \end{frame}
+
+        \begin{frame}{Nuclear reactors power 1800's era steam engines \\ just like coal, oil, and some natural gas}
+
+            \begin{columns}[T]
+
+                \begin{column}{0.5\textwidth}
+                    \begin{figure}
+                        \centering
+                        \includegraphics[width=\textwidth]{./img/bwrBop.png}
+                        \caption*{Neutrons to electrons}
+                    \end{figure}
+                \end{column}
+
+                \begin{column}{0.5\textwidth}
+                    \begin{itemize}
+                        \item Fission chain reaction releases heat
+                        \pause
+                        \item ... which boils water
+                        \pause
+                        \item ... which turns a turbine
+                        \pause
+                        \item ... which rotates a generator
+                        \pause
+                        \item ... which generates electricity!
+                        \pause
+
+                        \vspace{2em}
+
+                        \item One third of heat energy is converted to electricity
+
+                    \end{itemize}
+                \end{column}
+
+            \end{columns}
+
+        \end{frame}
+
+        \begin{frame}{There is room for improvement}
             \begin{itemize}
-                \item Nuclear chain reactions release heat
+                \item Spent nuclear fuel is waiting for disposal
                 \pause
-                \item ... which boils water
+                \item The core needs to be actively cooled
                 \pause
-                \item ... which turns a turbine
+                \item The fuel can melt
                 \pause
-                \item ... which rotates a generator
+                \item The water must be at high pressures
                 \pause
-                \item ... which generates electricity!
-                \pause
-                \item This \href{https://www.youtube.com/v/VJfIbBDR3e8?start=0&end=165}{\beamergotobutton{Video}} explains it better than me
+                \item Two-thirds of energy is lost
             \end{itemize}
         \end{frame}
 
-    \subsection{We've come a long way since 1978}
+        \begin{frame}{We have come a long way since 1978}
+            \begin{itemize}
+                \item The most recent plant was built in 1996
+                \pause
+                \item ... its construction began in 1978
+                \pause
+                \item ... its design process took place in the early 1970's
+                \pause
+                \item We can do better!
+            \end{itemize}
+        \end{frame}
 
-        \begin{frame}{Sodium-cooled Fast reactors (SFR)}{... can consume nuclear waste and then recycle it and consuming it again}
+    \subsection{... is new}
+
+        \begin{frame}{Sodium-cooled Fast reactors (SFR) consume nuclear waste, recycle it, and consume it again}
             \begin{figure}
                 \centering
                 \includegraphics[width=1.0\textwidth]{./img/fastCycle.png}
@@ -151,7 +249,7 @@
             \end{figure}
         \end{frame}
 
-        \begin{frame}{Traveling wave reactors (TWR)}{... (also known as Breed \& Burn reactors) can breed their own fuel \\ with zero reprocessing}
+        \begin{frame}{Traveling wave reactors (TWR; Breed \& Burn reactors) breed their own fuel without reprocessing}
             \begin{figure}
                 \centering
                 \includegraphics[width=0.9\textwidth]{./img/candle.png}
@@ -159,7 +257,15 @@
             \end{figure}
         \end{frame}
 
-        \begin{frame}{Fluoride-salt high-temperature reactors (FHR)}{... use coated particle fuel which cannot melt}
+        \begin{frame}{Fluoride-salt high-temperature reactors (FHR) \\ can be passively cooled with ambient air}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.9\textwidth]{./img/fhrBop.png}
+                \caption*{}
+            \end{figure}
+        \end{frame}
+
+        \begin{frame}{FHR's use coated particle fuel which cannot melt}
             \begin{figure}
                 \centering
                 \includegraphics[width=1.0\textwidth]{./img/fhrPebble.png}
@@ -167,7 +273,7 @@
             \end{figure}
         \end{frame}
 
-        \begin{frame}{FHR's}{... also use fluoride salts instead of water \\ for compact operation at high-temperatures}
+        \begin{frame}{FHR's replace water with fluoride salts \\ which boil at 1430$^{\circ}$C}
             \begin{figure}
                 \centering
                 \includegraphics[width=0.8\textwidth]{./img/fhrFlibe.png}
@@ -175,7 +281,7 @@
             \end{figure}
         \end{frame}
 
-        \begin{frame}{FHR's}{... also use compact turbines \\ for high-efficiency energy conversion and load following}
+        \begin{frame}{FHR's use modern air turbines \\ which are efficient and offer load following}
             \begin{figure}
                 \centering
                 \includegraphics[width=0.9\textwidth]{./img/fhrPower.png}
@@ -183,13 +289,7 @@
             \end{figure}
         \end{frame}
 
-        \begin{frame}{FHR's}{... can be passively cooled with ambient air \\ for extremely good safety}
-            \begin{figure}
-                \centering
-                \includegraphics[width=0.9\textwidth]{./img/fhrBop.png}
-                \caption*{}
-            \end{figure}
-        \end{frame}
+        FIXME
 
         \begin{frame}{Hybrid fusion-fission reactors}{... still need some work}
             \begin{figure}
@@ -217,25 +317,13 @@
 
 \section{Simulations}
 
-    \subsection{Solving the neutron transport equation}
+    \subsection{The neutron transport equation}
 
         \begin{frame}{Accurate simulation of neutron fields requires their description 7-dimensional neutron phase space}
             \begin{figure}
                 \centering
                 \includegraphics[width=0.9\textwidth]{./img/phaseSpace.png}
             \end{figure}
-        \end{frame}
-
-        \begin{frame}{The neutron transport equation balances sources and sinks within this neutron phase space}{(time dependence is omitted for simplicity)}
-            \begin{equation*}
-                \begin{split}
-                    \vec \Omega \cdot \vec \bigtriangledown \; \; \psi(\vec r, E, \vec \Omega) \\
-                    + \sigma_{total}(\vec r, E) \; \; N(\vec r) \; \; \psi(\vec r, E, \vec\Omega) \\
-                    = \int_0^\infty \! \! \! \! dE \int_{4\pi} \! \! \! \! d\vec\Omega \; \; \sigma_{scatter}(\vec r, E^\prime \rightarrow E, \vec \Omega^\prime \cdot \vec \Omega) \; \; N(\vec r) \; \; \psi(\vec r, E^\prime, \vec\Omega^\prime) \\
-                    + \frac{\chi(E)}{4\pi} \int_0^\infty \! \! \! \! dE^{\prime\prime} \; \; \nu (E^{\prime\prime}) \; \; \sigma_{fission}(\vec r, E^{\prime\prime}) \; \; N(\vec r) \; \; \psi(\vec r, E^{\prime\prime}, \vec\Omega^{\prime\prime}) \\
-                    + \mathcal{S}_{ext}(\vec r, E, \vec\Omega)
-                \end{split}
-            \end{equation*}
         \end{frame}
 
         \begin{frame}{Spatial distributions $(\vec r)$ can be complicated}
@@ -278,13 +366,33 @@
             \end{figure}
         \end{frame}
 
+        \begin{frame}{The neutron transport equation balances sources and sinks within this neutron phase space}{(time dependence is omitted for simplicity)}
+            \begin{equation*}
+                \begin{split}
+                    \vec \Omega \cdot \vec \bigtriangledown \; \; \psi(\vec r, E, \vec \Omega) \\
+                    + \sigma_{total}(\vec r, E) \; \; N(\vec r) \; \; \psi(\vec r, E, \vec\Omega) \\
+                    = \int_0^\infty \! \! \! \! dE \int_{4\pi} \! \! \! \! d\vec\Omega \; \; \sigma_{scatter}(\vec r, E^\prime \rightarrow E, \vec \Omega^\prime \cdot \vec \Omega) \; \; N(\vec r) \; \; \psi(\vec r, E^\prime, \vec\Omega^\prime) \\
+                    + \frac{\chi(E)}{4\pi} \int_0^\infty \! \! \! \! dE^{\prime\prime} \; \; \nu (E^{\prime\prime}) \; \; \sigma_{fission}(\vec r, E^{\prime\prime}) \; \; N(\vec r) \; \; \psi(\vec r, E^{\prime\prime}, \vec\Omega^{\prime\prime}) \\
+                    + \mathcal{S}_{ext}(\vec r, E, \vec\Omega)
+                \end{split}
+            \end{equation*}
+        \end{frame}
+
         \begin{frame}{Simplification, Discretization, Monte Carlo}
         \end{frame}
 
         \begin{frame}{Coupled simulations}
         \end{frame}
 
-    \subsection{Solving the Bateman equations}
+    \subsection{The Bateman equations}
+
+        \begin{frame}{Isotope depletion, breeding, and decay $(t)$ can be complicated}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.7\textwidth]{./img/fuelCycle.png}
+                \caption*{}
+            \end{figure}
+        \end{frame}
 
         \begin{frame}{The Bateman equations describe the time-evolution of isotopes during decay and irradiation}{... it must be solved simultaneously with the NTE}
             \begin{equation*}
@@ -296,14 +404,6 @@
                     + \sum_k \left[ b_{k \rightarrow i} \int_0^\infty \! \! \! \! dE \; \; \sigma_{absorption,k} ( \vec r, E) \; \; \int_{4\pi} \! \! \! \! d\vec\Omega \; \; \psi(\vec r, E, \vec \Omega) \; \; N_k(\vec r, t) \right] \\
                 \end{split}
             \end{equation*}
-        \end{frame}
-
-        \begin{frame}{Isotope depletion, breeding, and decay $(t)$ can be complicated}
-            \begin{figure}
-                \centering
-                \includegraphics[width=0.7\textwidth]{./img/fuelCycle.png}
-                \caption*{}
-            \end{figure}
         \end{frame}
 
         \begin{frame}{Analytical, Matrix Exponential, CRAM}
