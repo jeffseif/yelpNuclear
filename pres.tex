@@ -12,7 +12,7 @@
 \title{Nuclear Energy is \\ important, old, new, and complicated}
 \author{Jeffrey Seifried}
 \institute{Ad Delivery Team, Yelp}
-\date{Advanced Learning Group, \texttt{2015-03-16}}
+\date{Applied Learning Group, \texttt{2015-03-16}}
 
 \AtBeginSubsection[]
 {
@@ -35,7 +35,7 @@
 
 \section{About Me}
 
-    \begin{frame}{I am a devout supporter of nuclear energy}
+    \begin{frame}{1) Spend a decade in nuclear energy \\ 2) Data Miner at Yelp \; \; 3) ??? \; \; 4) Profit!}
 
         \begin{itemize}
 
@@ -74,11 +74,11 @@
 
             \begin{itemize}
 
+                \item Climate change is just getting ramped up
+                \pause
                 \item Coal particulates cause 10 thousand \\ deaths annually in the US
                 \pause
                 \item One quarter of California air pollution is from China
-                \pause
-                \item Climate change is just getting ramped up
                 \pause
 
                 \vspace{2em}
@@ -113,9 +113,9 @@
                         \pause
                         \item ... and 60\% of carbon-free electricity
                         \pause
-                        \item Most of ``other'' is hydro \\ (which is shrinking)
+                        \item Hydroelectric is shrinking
                         \pause
-                        \item Renewables are not ready
+                        \item Renewables (``other'') are not ready
                     \end{itemize}
                 \end{column}
 
@@ -131,9 +131,9 @@
 
                 \begin{column}{0.5\textwidth}
                     \begin{enumerate}
-                        \item A neutron tickles a fissile nucleus
+                        \item A neutron tickles a uranium nucleus
                         \pause
-                        \item ... which fissions into garbage, energy, and 2-3 neutrons
+                        \item ... which splits into garbage, energy, and 2-3 neutrons
                         \pause
                         \item ... on average, 1-2 neutrons leak from the system or are consumed in a non-fission reaction
                         \pause
@@ -161,7 +161,7 @@
                     \begin{figure}
                         \centering
                         \includegraphics[width=0.8\textwidth]{./img/bwrFuel.png}
-                        \caption*{A fuel assembly}
+                        \caption*{An LWR fuel assembly}
                     \end{figure}
                 \end{column}
 
@@ -169,7 +169,7 @@
                     \begin{figure}
                         \centering
                         \includegraphics[width=0.5\textwidth]{./img/bwrCore.png}
-                        \caption*{A nuclear reactor core}
+                        \caption*{An LWR core}
                     \end{figure}
                 \end{column}
 
@@ -204,13 +204,23 @@
 
                         \vspace{2em}
 
-                        \item One third of heat energy is converted to electricity
+                        \item Only one third of heat energy is converted to electricity
 
                     \end{itemize}
                 \end{column}
 
             \end{columns}
 
+        \end{frame}
+
+        \begin{frame}{We have come a long way since 1978}
+            \begin{itemize}
+                \item The most recent plant was built in 1996
+                \pause
+                \item ... its construction began in 1978
+                \pause
+                \item ... its design process took place in the early 1970's
+            \end{itemize}
         \end{frame}
 
         \begin{frame}{There is room for improvement}
@@ -227,18 +237,6 @@
             \end{itemize}
         \end{frame}
 
-        \begin{frame}{We have come a long way since 1978}
-            \begin{itemize}
-                \item The most recent plant was built in 1996
-                \pause
-                \item ... its construction began in 1978
-                \pause
-                \item ... its design process took place in the early 1970's
-                \pause
-                \item We can do better!
-            \end{itemize}
-        \end{frame}
-
     \subsection{... is new}
 
         \begin{frame}{Sodium-cooled Fast reactors (SFR) consume nuclear waste, recycle it, and consume it again}
@@ -249,7 +247,7 @@
             \end{figure}
         \end{frame}
 
-        \begin{frame}{Traveling wave reactors (TWR; Breed \& Burn reactors) breed their own fuel without reprocessing}
+        \begin{frame}{Traveling wave reactors (TWR; Breed \& Burn reactors) breed their own fuel without recycling}
             \begin{figure}
                 \centering
                 \includegraphics[width=0.9\textwidth]{./img/candle.png}
@@ -289,7 +287,7 @@
             \end{figure}
         \end{frame}
 
-        \begin{frame}{Fusion energy is star power on earth! \\ It produces no carbon or nuclear waste!}
+        \begin{frame}{Fusion energy is star power on earth! \\ It produces no nuclear waste!}
             \begin{figure}
                 \centering
                 \includegraphics[width=0.7\textwidth]{./img/theSun.jpg}
@@ -305,7 +303,7 @@
             \end{figure}
         \end{frame}
 
-        \begin{frame}{However, controlled fusion is really difficult ... the NIF experiment at Livermore came close to break-even}
+        \begin{frame}{However, controlled fusion is really difficult.  The NIF experiment at LLNL came close to break-even}
             \begin{figure}
                 \centering
                 \includegraphics[width=1.0\textwidth]{./img/nifChamber.png}
@@ -388,7 +386,7 @@
             \begin{itemize}
                 \item Ignore energy dependence
                 \pause
-                \item Assume direction dependence is isotropic or linearly anisotropic
+                \item Assume directional dependence is isotropic or linearly anisotropic
                 \pause
                 \item Approximate the system as a smeared homogeneous lump
                 \pause
@@ -421,7 +419,7 @@
             \end{enumerate}
         \end{frame}
 
-        \begin{frame}{The accurate approach is Monte Carlo neutron transport}
+        \begin{frame}{The accurate approach is Monte Carlo neutron transport -- following neutrons one-at-a-time}
             \begin{enumerate}
                 \item Assume a source distribution
                 \pause
@@ -439,17 +437,15 @@
             \end{enumerate}
         \end{frame}
 
-        \begin{frame}{Often other solutions need to be coupled and solved simultaneously}
+        \begin{frame}{The NTE often depends upon other fields, so models need to be solved simultaneously}
             \begin{itemize}
-                \item Neutron behavior is strongly dependant upon the density and temperature of water
-                \pause
                 \item Fluids flow (Navier-Stokes)
                 \pause
                 \item Heat spreads (heat equation) and expands things (equation of state of the material)
                 \pause
                 \item Boiling water behaves differently from liquid water (closure relations)
                 \pause
-                \item Solve each one independently (holding the rest constant) and iterate!
+                \item Solve each one independently  -- holding the rest constant -- and iterate!
                 \pause
                 \item Choose a smart path and consider relaxation for acceleration or stability
             \end{itemize}
@@ -497,12 +493,10 @@
                 \frac{\partial\vec N}{\partial t} = \mathbb{T} \vec N
             \end{equation*}
 
-            \pause
             \begin{equation*}
                 \vec N(t) = \vec N_0 e^{\mathbb{T} t}
             \end{equation*}
 
-            \pause
             \begin{equation*}
                 \vec N(t) \approx \mathbb{I} + \mathbb{T}t + \frac{\left(\mathbb{T}t\right)^2}{2!} + \dots
             \end{equation*}
@@ -527,6 +521,14 @@
             \pause
             \item ... complicated
         \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Thank you!}
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.9\textwidth]{./img/nuclearFree.jpg}
+            \caption*{}
+        \end{figure}
     \end{frame}
 
 \end{document}
